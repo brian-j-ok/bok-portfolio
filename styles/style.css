@@ -1,0 +1,64 @@
+*, *::before, *::after {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Main Page - General */
+.page-container {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: repeat(5, 1fr);
+  align-items: center;
+}
+
+.portfolio-background {
+  height: 100%;
+  width: 100%;
+
+  filter: blur(8px);
+
+  position: fixed;
+
+  z-index: -100;
+}
+
+.navbar-container {
+  grid-row: 1 / 6;
+}
+
+.navbar-container ul {
+  margin-left: 20px;
+  list-style: none;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.navbar-container li:hover {
+  background-color: grey;
+}
+
+/* Content Container Styles */
+.content-container {
+  background-color: hsl(15, 81%, 67%);
+  opacity: 0%;
+}
+
+.content-container[data-active="true"] {
+  animation: 2s load-in infinite;
+}
+
+@keyframes load-in {
+  from {
+    opacity: 0%;
+  }
+
+  to {
+    opacity: 100%;
+  }
+}
