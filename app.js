@@ -9,6 +9,8 @@ for (var i = 0; i < links.length; i++) {
 
 function activateLink(link) {
   for (var i = 0; i < pages.length; i++) {
+    console.log(pages[i].id);
+    console.log(link.innerHTML.toLowerCase());
     if (pages[i].id == link.innerHTML.toLowerCase()) {
       pages[i].setAttribute("data-active", "true");
     } else {
